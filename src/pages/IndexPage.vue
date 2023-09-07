@@ -6,7 +6,7 @@
       style="width: 200px; height: 200px"
     >
   </q-page> -->
-  <div class="q-pa-none q-gutter-sm">
+  <div class="q-pa-none q-gutter-xl">
     <q-btn
       color="white"
       text-color="black"
@@ -21,6 +21,19 @@
     <q-btn color="purple" label="Purple" />
     <q-btn color="black" label="Black" />
   </div>
+  <transition
+    appear
+    enter-active-class="animated fadeIn"
+    leave-active-class="animated fadeOut"
+  >
+    <!-- Wrapping only one DOM element, defined by QBtn -->
+    <q-btn color="secondary" icon="mail" label="Email" />
+  </transition>
+  <div class="row justify-between">
+    <div>First column</div>
+    <div>Second column</div>
+    <div>Third column</div>
+  </div>
 </template>
 
 <script>
@@ -28,6 +41,9 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "IndexPage",
+  mounted() {
+    console.log(this.$q);
+  },
   methods: {
     openDialog() {
       this.$q
